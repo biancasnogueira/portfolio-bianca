@@ -1,0 +1,25 @@
+{
+	"name": "portfolio-bianca",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"dependencies": {
+		"prettier": "^3.5.3",
+		"prettier-plugin-prisma": "^5.0.0"
+	},
+	"devDependencies": {},
+	"scripts": {
+    "dev": "npx concurrently \"cd backend && npm run start:dev\" \"cd frontend && npm run dev\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/biancasnogueira/portfolio-bianca.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/biancasnogueira/portfolio-bianca/issues"
+	},
+	"homepage": "https://github.com/biancasnogueira/portfolio-bianca#readme"
+}
