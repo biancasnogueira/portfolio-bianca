@@ -20,11 +20,11 @@ export default function Principal(props: PrincipalProps) {
 					<h1 className="flex gap-3 items-center">
 						<span className="w-2 h-2 rounded-full bg-red-500"></span>
 						<span className="text-3xl sm:text-5xl font-bold text-center">
-							Leonardo Leitão
+							Bianca Nogueira
 						</span>
 						<span className="w-2 h-2 rounded-full bg-red-500"></span>
 					</h1>
-					<h2 className="text-zinc-500 text-center">CTO da COD3R Ensino e Consultoria</h2>
+					<h2 className="text-zinc-500 text-center">&lt;Desenvolvedora Front-End/&gt;</h2>
 				</div>
 				<Tecnologias lista={props.tecnologias} />
 			</div>
