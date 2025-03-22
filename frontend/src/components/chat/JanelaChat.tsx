@@ -35,7 +35,7 @@ export default function JanelaChat() {
 					<span>Vamos conversar?</span>
 				</div>
 			) : (
-				<div className="flex flex-col p-2 gap-2 min-h-[400px] sm:min-h-[500px] max-h-[400px] sm:max-h-[500px] overflow-y-scroll">
+				<div className="flex flex-col p-2 gap-2 min-h-[200px] sm:min-h-[300px] max-h-[200px] sm:max-h-[200px] overflow-y-scroll">
 					{mensagens.map((mensagem, i) => {
 						const mesmoAutor = i > 0 && mensagens[i - 1].autor === mensagem.autor
 						return (

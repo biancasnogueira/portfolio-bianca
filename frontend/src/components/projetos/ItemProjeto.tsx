@@ -1,9 +1,9 @@
-import { Projeto } from "@core"
-import Image from "next/image"
-import Link from "next/link"
+import { Projeto } from "@core";
+import Image from "next/image";
+import Link from "next/link";
 
 export interface ItemProjetoProps {
-	projeto: Projeto
+	projeto: Projeto;
 }
 
 export default function ItemProjeto(props: ItemProjetoProps) {
@@ -11,17 +11,17 @@ export default function ItemProjeto(props: ItemProjetoProps) {
 		<Link href={`/projeto/${props.projeto.id}`}>
 			<div
 				className="
-                    relative rounded-2xl overflow-hidden border border-zinc-800
-                    min-w-64 min-h-64 
-                "
+					relative rounded-2xl overflow-hidden border border-zinc-800
+					w-full h-48 sm:h-56 md:h-64 lg:h-72
+				"
 			>
 				<Image
 					src={props.projeto.imagens[0]}
 					alt={props.projeto.nome}
 					fill
-					objectFit="cover"
+					className="object-cover"
 				/>
 			</div>
 		</Link>
-	)
+	);
 }

@@ -1,21 +1,21 @@
-import { Projeto } from "@core"
-import ItemProjeto from "./ItemProjeto"
+import { Projeto } from "@core";
+import ItemProjeto from "./ItemProjeto";
 import {
 	Carousel,
 	CarouselContent,
 	CarouselItem,
 	CarouselNext,
 	CarouselPrevious,
-} from "../ui/carousel"
+} from "../ui/carousel";
 
 export interface ProjetosProps {
-	titulo: string
-	lista: Projeto[]
+	titulo: string;
+	lista: Projeto[];
 }
 
 export default function Projetos(props: ProjetosProps) {
 	return (
-		<div className="flex flex-col items-center sm:items-start w-7/10 md:w-11/12 xl:w-full gap-5">
+		<div className="flex flex-col items-center sm:items-start w-full max-w-7xl mx-auto gap-5 px-4 sm:px-6 lg:px-8 overflow-hidden">
 			<h3 className="text-2xl font-bold text-white/70">{props.titulo}</h3>
 			<Carousel
 				opts={{
@@ -28,7 +28,7 @@ export default function Projetos(props: ProjetosProps) {
 					{props.lista.map((projeto) => (
 						<CarouselItem
 							key={projeto.id}
-							className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+							className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
 						>
 							<ItemProjeto projeto={projeto} />
 						</CarouselItem>
@@ -38,5 +38,5 @@ export default function Projetos(props: ProjetosProps) {
 				<CarouselNext />
 			</Carousel>
 		</div>
-	)
+	);
 }
