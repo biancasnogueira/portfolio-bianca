@@ -4,12 +4,14 @@
 	"description": "",
 	"main": "index.js",
 	"dependencies": {
+		"@tailwindcss/typography": "^0.5.16",
 		"prettier": "^3.5.3",
-		"prettier-plugin-prisma": "^5.0.0"
+		"prettier-plugin-prisma": "^5.0.0",
+		"tailwindcss": "^4.0.15",
+		"tailwindcss-animate": "^1.0.7"
 	},
-	"devDependencies": {},
 	"scripts": {
-    "dev": "npx concurrently \"cd backend && npm run start:dev\" \"cd frontend && npm run dev\""
+		"dev": "npx concurrently \"cd backend && npm run start:dev\" \"cd frontend && npm run dev\""
 	},
 	"repository": {
 		"type": "git",
