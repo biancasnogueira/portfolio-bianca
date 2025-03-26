@@ -25,7 +25,7 @@ export default function Menu() {
             <MenuItem href="/" selecionado={caminho === "/"}>
                 Início
             </MenuItem>
-            <MenuItem href="/projeto/1" selecionado={caminho.startsWith("/projeto")}>
+            <MenuItem href="/#projetos" selecionado={caminho.startsWith("/projeto")}>
                 Projetos
             </MenuItem>
             <MenuItem
