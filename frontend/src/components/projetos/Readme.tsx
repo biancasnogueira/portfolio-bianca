@@ -9,7 +9,7 @@ export default function Readme(props: ReadmeProps) {
 		<div 
 			className="flex max-w-full flex-col items-stretch 
 				px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 
-				bg-black border border-zinc-800 rounded-2xl overflow-hidden"
+				bg-black border border-zinc-800 rounded-2xl overflow-hidden pt-12 pb-12"
 		>
 			<div className="prose prose-zinc prose-invert max-w-full">
 				<ConteudoMD markdown={props.markdown} />

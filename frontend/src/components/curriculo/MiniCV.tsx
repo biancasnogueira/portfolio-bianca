@@ -24,8 +24,7 @@ export default function MiniCV() {
 					desenvolvo soluções modernas, responsivas e sob medida para atender às suas
 					necessidades. Seja um site institucional, um sistema de gestão ou um app mobile,
 					posso transformar sua ideia em uma solução tecnológica eficiente e de alto
-					impacto. Vamos juntos criar algo que simplifique processos, engaje clientes e
-					gere resultados?
+					impacto.
 				</p>
 			</div>
 		</div>
