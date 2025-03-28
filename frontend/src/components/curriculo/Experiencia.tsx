@@ -46,7 +46,7 @@ function Item(props: { principal: string; label: string }) {
   useEffect(() => {
     // Função para reiniciar a contagem sempre que o item for visível
     const startCount = () => {
-      let endValue = parseInt(props.principal.replace("+", "")) // obter o valor final da contagem
+      const endValue = parseInt(props.principal.replace("+", "")) // obter o valor final da contagem
       let startValue = 0
       setCount(0) // Reseta a contagem quando o item for visível
 
