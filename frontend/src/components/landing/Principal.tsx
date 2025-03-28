@@ -18,14 +18,14 @@ export default function Principal(props: PrincipalProps) {
 			<Cabecalho />
 			<div className="flex-1 w-full flex flex-col justify-center items-center gap-5">
 				<div className="flex flex-col items-center gap-1">
-					<div className="animate-float relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48">
+					<div className="animate-float relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 transition-all duration-300 hover:scale-105">
 						<Image
 							src="/minha-foto.png"
 							alt="Bianca Nogueira - Desenvolvedora Front-End"
 							fill
 							priority
 							sizes="(max-width: 768px) 80vw, 40vw"
-							className="rounded-full object-cover border-2 border-[#521797] shadow-lg hover:animate-pulse"
+							className="rounded-full object-cover border-2 border-[#521797] shadow-lg hover:shadow-glow"
 							quality={85}
 						/>
 					</div>

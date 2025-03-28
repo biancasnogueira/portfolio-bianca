@@ -19,7 +19,7 @@ export default async function Home() {
 				<Projetos titulo="Projetos Destaque" lista={projetos.destaques} />
 				<Projetos titulo="Web" lista={projetos.web} />
 				<Projetos titulo="Mobile" lista={projetos.mobile} />
-				<Projetos titulo="Jogos" lista={projetos.jogos} />
+				{/* <Projetos titulo="Jogos" lista={projetos.jogos} /> */}
 				<Curriculo tecnologias={tecnologias.todas} />
 				<Contato />
 			</Container>

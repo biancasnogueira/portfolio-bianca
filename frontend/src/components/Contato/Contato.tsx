@@ -1,11 +1,14 @@
-import Image from "next/image"
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface ContactItem {
-	icon: string
-	alt: string
-	label: string
-	value: string
-	href: string
+	icon: string;
+	alt: string;
+	label: string;
+	value: string;
+	href: string;
 }
 
 const Contato = () => {
@@ -38,41 +41,67 @@ const Contato = () => {
 			value: "@biancasnogueira",
 			href: "https://github.com/biancasnogueira",
 		},
-	]
+	];
 
 	return (
-		<section
-			id="contato"
-			className="container mx-auto flex flex-col items-center justify-center py-8 px-4"
-		>
-			<h2 className="text-2xl font-bold mb-8 text-center">Contatos</h2>
+		<section id="contato" className="container mx-auto flex flex-col items-center justify-center py-8 px-4">
+			<motion.h2
+				className="text-2xl font-bold mb-8 text-center"
+				initial={{ opacity: 0, y: -20 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.6, ease: "easeOut" }}
+				viewport={{ once: false }} // Mudar para false para ativar sempre
+			>
+				Contatos
+			</motion.h2>
 
-			<div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-3xl">
+			<motion.div
+				className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-3xl"
+				initial="hidden"
+				whileInView="visible"
+				variants={{
+					hidden: { opacity: 0, y: 30 },
+					visible: {
+						opacity: 1,
+						y: 0,
+						transition: { staggerChildren: 0.2, delayChildren: 0.2 },
+					},
+				}}
+				viewport={{ once: false }} // Mudar para false para ativar sempre
+			>
 				{contacts.map((contact, index) => (
 					<ContactCard key={index} {...contact} />
 				))}
-			</div>
+			</motion.div>
 		</section>
-	)
-}
+	);
+};
 
 const ContactCard = ({ icon, alt, label, value, href }: ContactItem) => {
 	return (
-		<div className="flex flex-col items-center text-center transition-transform duration-300 hover:scale-105">
+		<motion.div
+			className="flex flex-col items-center text-center"
+			variants={{
+				hidden: { opacity: 0, scale: 0.8 },
+				visible: { opacity: 1, scale: 1 },
+			}}
+			whileHover={{ scale: 1.1, rotate: 2 }}
+			transition={{ type: "spring", stiffness: 200, damping: 10 }}
+		>
 			<a
 				href={href}
 				target="_blank"
 				rel="noopener noreferrer"
 				className="flex flex-col items-center gap-2"
 			>
-				<div className="bg-[#212121] border-2 border-[#521797] rounded-full h-10 w-10 flex items-center justify-center">
-					<Image src={icon} alt={alt} width={20} height={20} className="h-5 w-5" />
+				<div className="bg-[#212121] border-2 border-[#521797] rounded-full h-12 w-12 flex items-center justify-center shadow-lg hover:shadow-[#521797] transition-all duration-300">
+					<Image src={icon} alt={alt} width={24} height={24} className="h-6 w-6" />
 				</div>
 				<p className="font-medium">{label}</p>
 				<p className="text-sm text-gray-300">{value}</p>
 			</a>
-		</div>
-	)
-}
+		</motion.div>
+	);
+};
 
-export default Contato
+export default Contato;
