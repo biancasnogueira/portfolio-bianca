@@ -4,51 +4,99 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
-export default function MiniCV() {
-	// Detecta quando a seção entra na tela
+export default function DiferencaPrecoValor() {
 	const { ref, inView } = useInView({
-		triggerOnce: false, // Sempre anima ao entrar na tela
-		threshold: 0.2, // Ativa quando 20% da seção estiver visível
+		triggerOnce: false,
+		threshold: 0.2,
 	})
 
 	return (
-		<motion.div
+		<motion.section
 			ref={ref}
-			className="flex-1 flex flex-col-reverse gap-6 md:flex-row lg:flex-col-reverse xl:flex-row items-center md:items-start lg:items-center xl:items-start bg-black border border-zinc-800 rounded-2xl px-6 pt-6 relative overflow-hidden"
-			initial={{ opacity: 0, y: 80 }}
-			animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }}
+			className="relative flex flex-col md:flex-row items-center justify-between gap-10 px-8 py-16 border border-zinc-800 rounded-2xl overflow-hidden  bg-black"
+			initial={{ y: 50 }}
+			animate={inView ? { y: 0 } : { y: 50 }}
 			transition={{ duration: 1.2, ease: "easeOut" }}
 		>
-			<div className="relative min-w-72 h-64 xl:self-end">
-				<Image src="/minha-foto.png" alt="Foto de perfil" fill />
-			</div>
+			{/* Fundo animado */}
+			<div className=""></div>
 
-			<div className="flex flex-col gap-5 self-center py-6 items-center md:items-start lg:items-center xl:items-start">
-				<div className="flex flex-col items-center md:items-start lg:items-center xl:items-start">
-					<motion.span
-						className="bg-gradient-to-r from-[#521797] via-white to-white text-transparent bg-clip-text text-2xl font-bold"
-						initial={{ opacity: 0, x: -50 }}
-						animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-						transition={{ duration: 1, delay: 0.4 }}
-					>
-						Bianca Nogueira
-					</motion.span>
-					<span>Desenvolvedora Fullstack e Analista de Sistemas</span>
-				</div>
+			{/* Texto */}
+			<div className="max-w-lg text-center md:text-left relative z-10">
+				<motion.h2
+					className="text-3xl font-bold text-white"
+					initial={{ opacity: 0 }}
+					animate={inView ? { opacity: 1 } : { opacity: 0 }}
+					transition={{ duration: 1, delay: 0.3 }}
+				>
+					Preço ou Valor? O que realmente importa para o seu negócio?
+				</motion.h2>
 
 				<motion.p
-					className="text-sm text-center md:text-left lg:text-center xl:text-left"
-					initial={{ opacity: 0, x: 50 }}
-					animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-					transition={{ duration: 1.2, delay: 0.6 }}
+					className="mt-4 text-gray-300"
+					initial={{ opacity: 0}}
+					animate={inView ? { opacity: 1 } : { opacity: 0 }}
+					transition={{ duration: 1, delay: 0.5 }}
 				>
-					Desenvolvedora Fullstack especializada em criar sites, sistemas e aplicativos
-					que impulsionam negócios. Com expertise em HTML, CSS, JavaScript, React e MySQL,
-					desenvolvo soluções modernas, responsivas e sob medida para atender às suas
-					necessidades. Seja um site institucional, um sistema de gestão ou um app mobile,
-					posso transformar sua ideia em uma solução tecnológica eficiente e de alto impacto.
+					Um site barato pode afastar clientes. Já um site profissional te ajuda a vender
+					mais e crescer.<br/> Qual você prefere?
 				</motion.p>
+
+				<motion.a
+					href="#contato"
+					className="inline-block mt-6 px-6 py-3 bg-[#521797] text-white font-semibold rounded-lg shadow-md hover:scale-105 transition"
+					initial={{ opacity: 0, scale: 0.8 }}
+					animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+					transition={{ duration: 0.8, delay: 0.7 }}
+				>
+					Fale comigo →
+				</motion.a>
 			</div>
-		</motion.div>
+
+			{/* Imagens Comparativas Flutuantes */}
+			<div className="relative max-w-lg">
+				{/* Imagem central (Laptop) */}
+				<motion.div
+					className="relative z-10 -left-20 right-25 top-12 w-64"
+					initial={{ opacity: 0, y: 50 }}
+					animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+					transition={{ duration: 1, delay: 0.6 }}
+				>
+					<Image
+						src="/notebook-mock-2.webp"
+						alt="Site profissional"
+						width={500}
+						height={300}
+						className=""
+					/>
+				</motion.div>
+
+				{/* Imagem flutuante esquerda (Tablet) */}
+				<motion.div
+					className="absolute z-20 left-25 top-10 w-64 animate-float"
+				>
+					<Image
+						src="/tablet-mock-2.webp"
+						alt="Site profissional"
+						width={180}
+						height={180}
+						className=""
+					/>
+				</motion.div>
+
+{/* Imagem flutuante iPhone */}
+<motion.div
+	className="absolute -left-2 top-8 -bottom-2 w-36  animate-float"
+>
+	<Image
+		src="/iphone-mock-2.webp"
+		alt="Site barato e ruim"
+		width={100}
+		height={100}
+		className="brightness-100"
+	/>
+</motion.div>
+			</div>
+		</motion.section>
 	)
 }

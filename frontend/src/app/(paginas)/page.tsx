@@ -16,11 +16,14 @@ export default async function Home() {
 			<Principal tecnologias={tecnologias.destaques} />
 			<Container className="py-16 flex flex-col items-center gap-10">
 				<SobreMim />
-				<Projetos titulo="Projetos Destaque" lista={projetos.destaques} />
+				<Projetos 
+					titulo ="Conheça os projetos que já desenvolvi"
+					lista={projetos.destaques}
+				/>
+				<Curriculo tecnologias={tecnologias.todas} />
 				<Projetos titulo="Web" lista={projetos.web} />
 				<Projetos titulo="Mobile" lista={projetos.mobile} />
 				{/* <Projetos titulo="Jogos" lista={projetos.jogos} /> */}
-				<Curriculo tecnologias={tecnologias.todas} />
 				<Contato />
 			</Container>
 		</div>

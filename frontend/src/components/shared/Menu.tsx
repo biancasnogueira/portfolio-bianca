@@ -25,6 +25,9 @@ export default function Menu() {
             <MenuItem href="/" selecionado={caminho === "/"}>
                 Início
             </MenuItem>
+            <MenuItem href="/#sobre-mim" selecionado={caminho.startsWith("/sobre-mim")}>
+                Quem sou eu?
+            </MenuItem>
             <MenuItem href="/#projetos" selecionado={caminho.startsWith("/projeto")}>
                 Projetos
             </MenuItem>

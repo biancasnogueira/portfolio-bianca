@@ -29,8 +29,6 @@ export default function TecnologiasTrabalhadas(props: TecnologiasTrabalhadasProp
 
 	return (
 		<div ref={ref} className="flex justify-center items-center p-6 w-full lg:w-72 bg-black border border-zinc-800 rounded-2xl relative overflow-hidden">
-			{/* Fundo Animado */}
-			<div className="absolute inset-0 bg-gradient-to-r from-purple-800 via-black to-purple-800 animate-[pulse_5s_infinite] opacity-20"></div>
 
 			{/* Só anima quando estiver visível */}
 			<motion.div 

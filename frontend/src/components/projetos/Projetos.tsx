@@ -15,7 +15,10 @@ export interface ProjetosProps {
 
 export default function Projetos(props: ProjetosProps) {
 	return (
-		<div id="projetos" className="flex flex-col items-center sm:items-start w-8/10 md:w-11/12 xl:w-full gap-5">
+		<div
+			id="projetos"
+			className="flex flex-col items-center sm:items-start w-8/10 md:w-11/12 xl:w-full gap-5"
+		>
 			<h3 className="text-2xl font-bold text-white/70 w-full text-left">{props.titulo}</h3>
 
 			<div className="w-full relative group">

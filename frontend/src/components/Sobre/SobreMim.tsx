@@ -20,7 +20,7 @@ export default function SobreMim() {
 	}, [])
 
 	return (
-		<motion.div
+		<motion.div id="sobre-mim"
 			initial={{ opacity: 0, y: scrollDirection === "down" ? 50 : -50 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: false, amount: 0.3 }}
@@ -34,7 +34,7 @@ export default function SobreMim() {
 						whileInView={{ scale: 1 }}
 						transition={{ type: "spring", stiffness: 100 }}
 					>
-						<span className="text-2xl font-bold bg-gradient-to-r from-[#521797] via-[#9b51e0] to-[#521797] bg-clip-text text-transparent">Sobre mim</span>
+						<span className="text-2xl font-bold bg-gradient-to-r from-[#521797] via-[#9b51e0] to-[#521797] bg-clip-text text-transparent">Quem é Bianca?</span>
 					</motion.div>
 					<motion.p
 						initial={{ opacity: 0 }}
