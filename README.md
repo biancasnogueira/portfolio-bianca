@@ -1,4 +1,4 @@
-# 🧑‍💻 Portfoleo
+# 🧑‍💻 Meu Portfólio
 
 <div align="center">
 
@@ -11,7 +11,7 @@
 </div>
 
 <div data-badges>
-  <img src="https://img.shields.io/badge/next.js-%23000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
+    <img src="https://img.shields.io/badge/next.js-%23000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
     <img src="https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS" />
     <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
     <img src="https://img.shields.io/badge/prisma-%232D3748.svg?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma" />
@@ -20,77 +20,95 @@
     <img src="https://img.shields.io/badge/n8n-%2300C4B4.svg?style=for-the-badge&logo=n8n&logoColor=white" alt="n8n" />
     <img src="https://img.shields.io/badge/supabase-%233ECF8E.svg?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
 </div>
-
 </div>
 
-O meu portfólio é uma aplicação full stack que integra tecnologias populares do mercado para criar uma vitrine digital das habilidades e projetos de um desenvolvedor. Esta plataforma vai além da simples exibição de trabalhos anteriores, funcionando como uma demonstração prática das capacidades técnicas do profissional, evidenciando seu domínio em desenvolvimento web moderno.
+---
 
-Além de apresentar os projetos do desenvolvedor, a aplicação incorpora agentes de IA inteligentes que têm acesso completo ao currículo, repositórios do GitHub e histórico do profissional. Essa integração permite que recrutadores e potenciais clientes explorem, através de interações em tempo real via chat, aspectos específicos das competências técnicas do desenvolvedor. Os chats com os agentes oferecem insights valiosos, permitindo que visitantes façam perguntas e recebam informações detalhadas sobre as habilidades e experiências do profissional, tornando o processo de avaliação mais dinâmico e informativo.
+## ✨ Sobre o Projeto
 
-## 🖥️ Como rodar este projeto 🖥️
+O **Portfólio** é uma aplicação full stack que integra tecnologias populares do mercado para criar uma vitrine digital das habilidades e projetos de um desenvolvedor. Esta plataforma vai além da simples exibição de trabalhos anteriores, funcionando como uma demonstração prática das capacidades técnicas do profissional, evidenciando seu domínio em desenvolvimento web moderno.
 
-### Requisitos:
+Além de apresentar os projetos do desenvolvedor, a aplicação incorpora agentes de IA inteligentes que acessam o currículo, repositórios do GitHub e histórico profissional. Com isso, recrutadores e potenciais clientes podem explorar, via chat interativo, aspectos específicos das competências técnicas do desenvolvedor, tornando o processo de avaliação mais dinâmico e informativo.
 
--   Node.js instalado
+---
 
-### Execução:
+## 🚀 Como Rodar o Projeto
+
+### 📌 Requisitos:
+- [Node.js](https://nodejs.org/) instalado
+
+### 📥 Passo a Passo:
 
 1. Clone este repositório:
-
     ```sh
     git clone https://github.com/biancasnogueira/portfolio-bianca.git
     ```
-
 2. Acesse o diretório do projeto:
-
     ```sh
     cd portfolio-bianca
     ```
-
-3. Acesse sua conta no [Supabase](https://supabase.com) ou crie uma nova conta.
-
-4. Navegue até o projeto no Supabase e clique no botão `connect`.
-   
-5. Clique em selecionar ORM e selecione o ORM Prisma.
-   
-6. Copie as variáveis de ambiente listadas, crie um arquivo `.env` na pasta backend e preencha com as seguintes informações:
-    ```
+3. Configure o **Supabase**:
+   - Acesse sua conta no [Supabase](https://supabase.com) ou crie uma nova.
+   - Navegue até o projeto no Supabase e clique no botão `connect`.
+   - Selecione o ORM **Prisma**.
+   - Copie as variáveis de ambiente e crie um arquivo `.env` na pasta `backend` com:
+    ```sh
     DATABASE_URL=
     DIRECT_URL=
-    PORT=
-    ```
-    **Obs: Caso o valor da porta não seja adicionado, a aplicação rodará por padrão na porta 4000**
-
-7. Crie uma conta no site no [n8n](https://n8n.io), e importe o fluxo definido no arquivo assistente-pessoal que está na pasta assets.
-
-8. Após importar o fluxo, clique no primeiro nó, acesse `webhooks url`, clique em `Production URL` e copie o valor dessa URL.
-**Obs: Lembre-se de ativar o workflow no n8n**
-
-9. Crie um arquivo `.env` na pasta web e preencha com as seguintes informações, sendo que a URL da API é a URL do backend e a segunda variável deve ter como valor a URL que extraimos no n8n:
-
-    ```
-    NEXT_PUBLIC_API_URL=
-    NEXT_PUBLIC_CHAT_WEBHOOK=
+    PORT= # (Padrão: 4000 se não definido)
     ```
 
-10. Instale as dependências dos projetos `web` e `backend` com o comando `npm i` em cada uma das pastas
+4. Configure o **n8n**:
+   - Crie uma conta no [n8n](https://n8n.io).
+   - Importe o fluxo definido no arquivo `assistente-pessoal` na pasta `assets`.
+   - No primeiro nó do workflow, acesse `Webhooks URL`, clique em `Production URL` e copie a URL.
+   - **Ative o workflow no n8n.**
 
-11. Abra as pastas `web` e `backend` em dois terminais diferentes e rode o comando `npm run dev` em cada um dos terminais para executar o projeto. 
+5. Crie um arquivo `.env` na pasta `web` com:
+    ```sh
+    NEXT_PUBLIC_API_URL= # URL do backend
+    NEXT_PUBLIC_CHAT_WEBHOOK= # URL extraída do n8n
+    ```
 
-## 🗒️ Features do projeto 🗒️
+6. Instale as dependências dos projetos `web` e `backend`:
+    ```sh
+    npm install
+    ```
 
--   Exibição de Projetos
--   Integração com Agentes de IA via Chat
--   Repositórios GitHub Integrados
--   Lista de tecnologias destacadas
--   Lista de tecnologias dos projetos
--   Buscar os projetos por Id com as tecnologias associadas
+7. Execute o projeto:
+    - Abra dois terminais separados.
+    - No diretório `backend`, rode:
+        ```sh
+        npm run dev
+        ```
+    - No diretório `web`, rode:
+        ```sh
+        npm run dev
+        ```
 
-![](./.gitassets/2.png)   
+---
 
-## 💎 Links úteis 💎
+## 📌 Funcionalidades
 
--   [Next.js](https://nextjs.org/docs)
--   [NestJS](https://docs.nestjs.com/)
--   [Prisma](https://www.prisma.io/docs)
--   [Supabase](https://supabase.com)
+✔ Exibição de Projetos  
+✔ Integração com Agentes de IA via Chat  
+✔ Repositórios GitHub Integrados  
+✔ Lista de Tecnologias Destacadas  
+✔ Filtragem de Projetos por Tecnologias  
+✔ Busca de Projetos por ID com Tecnologias Associadas  
+
+![Demonstração](./.gitassets/2.png)
+
+---
+
+## 📚 Links Úteis
+
+- [Next.js](https://nextjs.org/docs)
+- [NestJS](https://docs.nestjs.com/)
+- [Prisma](https://www.prisma.io/docs)
+- [Supabase](https://supabase.com)
+- [n8n](https://n8n.io/docs)
+
+---
+
+Feito com 💜 por [Bianca Nogueira](https://github.com/biancasnogueira) 🚀
